@@ -1,0 +1,11 @@
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\bin\Debug\netcoreapp1.1\HomeAutomationAPI.deps.json
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\bin\Debug\netcoreapp1.1\HomeAutomationAPI.runtimeconfig.json
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\bin\Debug\netcoreapp1.1\HomeAutomationAPI.runtimeconfig.dev.json
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\bin\Debug\netcoreapp1.1\HomeAutomationAPI.dll
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\obj\Debug\netcoreapp1.1\HomeAutomationAPI.csprojResolveAssemblyReference.cache
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\obj\Debug\netcoreapp1.1\HomeAutomationAPI.csproj.CoreCompileInputs.cache
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\obj\Debug\netcoreapp1.1\HomeAutomationAPI.AssemblyInfoInputs.cache
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\obj\Debug\netcoreapp1.1\HomeAutomationAPI.AssemblyInfo.cs
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\bin\Debug\netcoreapp1.1\HomeAutomationAPI.pdb
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\obj\Debug\netcoreapp1.1\HomeAutomationAPI.dll
+C:\Users\pashim\documents\visual studio 2017\Projects\AzureHomeAutomation\HomeAutomationAPI\obj\Debug\netcoreapp1.1\HomeAutomationAPI.pdb
