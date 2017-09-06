@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Data.Json;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -13,6 +16,7 @@ using Windows.UI.Xaml.Shapes;
 using HomeAutomationControllerDevice.Helpers;
 using HomeAutomationControllerDevice.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,10 +27,10 @@ namespace HomeAutomationControllerDevice
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private I2cHelper _ledcontrol;
-        private bool _isI2cIntialized = false;
+        private readonly I2cHelper _ledcontrol;
+        private readonly bool _isI2cIntialized = false;
 
-        public const string DeviceId = "homehub-02";
+        public const string DeviceId = "homehub-01";
         public const string Longitude = "0.00034";
         public const string Latitude = "13.22234";
 
@@ -51,7 +55,7 @@ namespace HomeAutomationControllerDevice
             _cameraHelper = new CameraHelper(_captureElement);
             _blobStorageHepler = new BlobStorageHelper();
 
-            _iothubclient = new DeviceClientHelper(DeviceId, String.Format($"HostName=home-automation-iothub.azure-devices.net;DeviceId={DeviceId};SharedAccessKey=HGxPUG+PItU/7TMc8vHNW89xds/gDKGCforrmei0EHI="));
+            _iothubclient = new DeviceClientHelper(DeviceId, String.Format($"HostName=home-automation-iothub.azure-devices.net;DeviceId={DeviceId};SharedAccessKey=ekgleg2ZT7hICYSY5wJCCZzOgp3RhdnIPt0W35Kojw0="));
             _iothubclient._client.SetConnectionStatusChangesHandler(OnConnectionStatusChagned);
 
             await _iothubclient._client.SetMethodHandlerAsync("SetDeviceElementSwitchStatus", OnSetDeviceElementSwitchStatus, null);
@@ -197,7 +201,7 @@ namespace HomeAutomationControllerDevice
             var data = JsonConvert.SerializeObject(new
             {
                 deviceId = DeviceId,
-                value = 55.55
+                value = _weatherForecast
             });
             var response = await Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(data), 500));
             return response;
@@ -212,14 +216,30 @@ namespace HomeAutomationControllerDevice
         {
             _temperature = Dht22Helper.ReadTemperature();
             _humidity = Dht22Helper.ReadHumidity();
-
+            _weatherForecast = await GetWeatherForecast(_temperature, _humidity);
             _coolerPowerConsumed = _virtualElements.Find(device => device.ElementType == ElementType.Cooler).PowerConsumptionValue;
             _heaterPowerConsumed = _virtualElements.Find(device => device.ElementType == ElementType.Heater).PowerConsumptionValue;
             _lightPowerConsumed = _virtualElements.Find(device => device.ElementType == ElementType.Light).PowerConsumptionValue;
-
             _totalEnergyConsumedCurrent = _coolerPowerConsumed + _heaterPowerConsumed + _lightPowerConsumed;
-            await _iothubclient.SendDeviceTelemetryAsync(DeviceElementTelemetry());
             await UpdateUserInterfaceTextsAsync();
+
+            if (_isConnectedToAzure)
+            {
+                await _iothubclient.SendDeviceTelemetryAsync(JsonConvert.SerializeObject(new
+                {
+                    deviceId = DeviceId,
+                    latitude = Latitude,
+                    longitude = Longitude,
+                    time = DateTime.Now.ToString("o"),
+                    temperature = _temperature,
+                    humidity = _humidity,
+                    cooler = _coolerPowerConsumed,
+                    heater = _heaterPowerConsumed,
+                    light = _lightPowerConsumed,
+                    forecast = _weatherForecast,
+                    totalPower = _totalEnergyConsumedCurrent
+                }));
+            }
         }
         private string DeviceElementTelemetry()
         {
@@ -227,6 +247,9 @@ namespace HomeAutomationControllerDevice
             {
                 DeviceId = DeviceId,
                 Elements = _virtualElements,
+                Humidity = _humidity,
+                Temperature = _temperature,
+                Forecast = _weatherForecast,
                 Location = new Location()
                 {
                     Latitude = Latitude,
@@ -273,6 +296,7 @@ namespace HomeAutomationControllerDevice
             {
                 _currentTemperature.Text = string.Format("{0:0.00}", Math.Truncate(_temperature * 10) / 10);
                 _currentHumidity.Text = string.Format("{0:0.00}", Math.Truncate(_humidity * 10) / 10);
+                _forecast.Text = string.Format("{0:0.00}", Math.Truncate((_weatherForecast * 100) * 10) / 10);
                 _coolerPowerConsumption.Text = string.Format("{0:0.00}", Math.Truncate(_coolerPowerConsumed * 10) / 10);
                 _heaterPowerConsumption.Text = string.Format("{0:0.00}", Math.Truncate(_heaterPowerConsumed * 10) / 10);
                 _lightPowerConsumption.Text = string.Format("{0:0.00}", Math.Truncate(_lightPowerConsumed * 10) / 10);
@@ -388,9 +412,61 @@ namespace HomeAutomationControllerDevice
             return blobAddress;
         }
 
-        private bool _isConnectedToAzure = false;
-        private double _temperature;
-        private double _humidity;
+        private async Task<double> GetWeatherForecast(double humidity, double temperature)
+        {
+            var forecast = 0.00;
+            using (var client = new HttpClient())
+            {
+                var scoreRequest = new
+                {
+                    Inputs = new Dictionary<string, StringTable>() {
+                        {
+                            "input1",
+                            new StringTable()
+                            {
+                                ColumnNames = new string[] {"temperature", "humidity"},
+                                Values = new string[,] {  { ((int)temperature).ToString(), ((int)humidity).ToString()}, { ((int)temperature).ToString(), ((int)humidity).ToString() },  }
+                            }
+                        },
+                    },
+                    GlobalParameters = new Dictionary<string, string>()
+                    {
+                    }
+                };
+                const string apiKey = "n2k0hwKWwU2FDj5treQlT3bopWW+DxFCacO7dbl3VzmuE6ZXh0otOBIxhAZZPiE7tVl8Ygk8XCnkkFj5/mrRFQ=="; // Replace this with the API key for the web service
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+                client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/8088888da3db41b3b5e5f66af6af79b9/services/7d3438c65dc349b3bd5e7fc293d0a3d4/execute?api-version=2.0&details=true");
+                var response = await client.PostAsJsonAsync("", scoreRequest);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    try
+                    {
+                        var result = JObject.Parse(await response.Content.ReadAsStringAsync())["Results"]["output1"]["value"]["Values"][0][3];
+                        if (!Double.TryParse(result.ToString(), out forecast)) _weatherForecast = 0.00;
+                    }
+                    catch (Exception)
+                    {
+                        forecast = 0.00;
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine(string.Format("The request failed with status code: {0}", response.StatusCode));
+                    // Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
+                    Debug.WriteLine(response.Headers.ToString());
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine(responseContent);
+                }
+                return forecast;
+            }
+        }
+    
+
+    private bool _isConnectedToAzure = false;
+        private double _temperature = 0.00;
+        private double _humidity = 0.00;
+        private double _weatherForecast = 0.00;
 
         private DeviceClientHelper _iothubclient;
         private CameraHelper _cameraHelper;
@@ -410,5 +486,11 @@ namespace HomeAutomationControllerDevice
         private double _heaterPowerConsumed;
         private double _lightPowerConsumed;
         private double _totalEnergyConsumedCurrent;
+    }
+
+    public class StringTable
+    {
+        public string[] ColumnNames { get; set; }
+        public string[,] Values { get; set; }
     }
 }

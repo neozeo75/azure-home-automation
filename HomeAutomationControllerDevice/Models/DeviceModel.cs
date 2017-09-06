@@ -8,6 +8,9 @@ namespace HomeAutomationControllerDevice.Models
     {
         public string DeviceId { get; set; }
         public DateTime Time { get; set; }
+        public double Temperature { get; set; }
+        public double Humidity { get; set; }
+        public double Forecast { get; set; }
         public Location Location { get; set; }
         public List<VirtualDeviceElement> Elements { get; set; }
         public string ToJsonString(Formatting formatting) => JsonConvert.SerializeObject(this, formatting);

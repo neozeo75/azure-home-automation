@@ -9,6 +9,9 @@ namespace HomeAutomationWebAPI.Models
         public string DeviceId { get; set; }
         public DateTime Time { get; set; }
         public Location Location { get; set; }
+        public double Temperature { get; set; }
+        public double Humidity { get; set; }
+        public double Forecast { get; set; }
         public List<dynamic> Elements { get; set; }
         public string ToJsonString(Formatting formatting) => JsonConvert.SerializeObject(this, formatting);
     }
