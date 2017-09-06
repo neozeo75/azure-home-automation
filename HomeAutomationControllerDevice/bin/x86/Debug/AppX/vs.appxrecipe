@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-06T15:51:19.350</Modified>
+      <Modified>2017-09-06T16:42:14.542</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\x86\Debug\HomeAutomationControllerDevice.exe">
       <PackagePath>entrypoint\HomeAutomationControllerDevice.exe</PackagePath>
-      <Modified>2017-09-06T15:51:17.960</Modified>
+      <Modified>2017-09-06T16:42:13.059</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pashim\.nuget\packages\DotNetty.Buffers\0.4.6\lib\netstandard1.3\DotNetty.Buffers.dll">
       <PackagePath>DotNetty.Buffers.dll</PackagePath>
@@ -764,11 +764,11 @@
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-06T15:12:04.596</Modified>
+      <Modified>2017-09-06T16:04:53.413</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\x86\Debug\Core\HomeAutomationControllerDevice.exe">
       <PackagePath>HomeAutomationControllerDevice.exe</PackagePath>
-      <Modified>2017-09-06T15:51:19.336</Modified>
+      <Modified>2017-09-06T16:42:14.521</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

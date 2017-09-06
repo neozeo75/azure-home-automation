@@ -271,12 +271,12 @@ namespace HomeAutomationControllerDevice
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                _currentTemperature.Text = _temperature.ToString();
-                _currentHumidity.Text = _humidity.ToString();
-                _coolerPowerConsumption.Text = _coolerPowerConsumed.ToString();
-                _heaterPowerConsumption.Text = _heaterPowerConsumed.ToString();
-                _lightPowerConsumption.Text = _lightPowerConsumed.ToString();
-                _totalPowerConsumption.Text = _totalEnergyConsumedCurrent.ToString();
+                _currentTemperature.Text = string.Format("{0:0.00}", Math.Truncate(_temperature * 10) / 10);
+                _currentHumidity.Text = string.Format("{0:0.00}", Math.Truncate(_humidity * 10) / 10);
+                _coolerPowerConsumption.Text = string.Format("{0:0.00}", Math.Truncate(_coolerPowerConsumed * 10) / 10);
+                _heaterPowerConsumption.Text = string.Format("{0:0.00}", Math.Truncate(_heaterPowerConsumed * 10) / 10);
+                _lightPowerConsumption.Text = string.Format("{0:0.00}", Math.Truncate(_lightPowerConsumed * 10) / 10);
+                _totalPowerConsumption.Text = string.Format("{0:0.00}", Math.Truncate(_totalEnergyConsumedCurrent * 10) / 10);
             });
         }
 

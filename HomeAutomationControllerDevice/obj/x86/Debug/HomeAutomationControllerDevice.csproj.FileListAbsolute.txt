@@ -283,3 +283,4 @@ C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAu
 C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\obj\x86\Debug\Microsoft.Azure.Devices.Client.pri.xml
 C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\obj\x86\Debug\Microsoft.Azure.Devices.Shared.pri.xml
 C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\obj\x86\Debug\HomeAutomationControllerDevice.csprojResolveAssemblyReference.cache
