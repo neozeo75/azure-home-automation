@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-06T14:44:01.409</Modified>
+      <Modified>2017-09-08T12:31:27.776</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\ARM\Debug\HomeAutomationControllerDevice.exe">
       <PackagePath>entrypoint\HomeAutomationControllerDevice.exe</PackagePath>
-      <Modified>2017-09-06T14:43:56.600</Modified>
+      <Modified>2017-09-08T12:31:26.412</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pashim\.nuget\packages\DotNetty.Buffers\0.4.6\lib\netstandard1.3\DotNetty.Buffers.dll">
       <PackagePath>DotNetty.Buffers.dll</PackagePath>
@@ -751,7 +751,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\ARM\Debug\HomeAutomationControllerDevice.xr.xml">
       <PackagePath>HomeAutomationControllerDevice.xr.xml</PackagePath>
-      <Modified>2017-09-06T12:43:54.513</Modified>
+      <Modified>2017-09-08T12:31:26.098</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -760,11 +760,11 @@
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-06T14:44:00.117</Modified>
+      <Modified>2017-09-08T12:31:27.194</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\ARM\Debug\Core\HomeAutomationControllerDevice.exe">
       <PackagePath>HomeAutomationControllerDevice.exe</PackagePath>
-      <Modified>2017-09-06T14:44:01.378</Modified>
+      <Modified>2017-09-08T12:31:27.766</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

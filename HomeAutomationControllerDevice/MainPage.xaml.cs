@@ -343,7 +343,7 @@ namespace HomeAutomationControllerDevice
             if (((ToggleSwitch)sender).IsOn)
             {
                 _light.Switch(SwitchStatus.On);
-                if (_isI2cIntialized) _ledcontrol.setLight();
+                if (_isI2cIntialized) _ledcontrol.setLight(); 
             }
             else
             {
