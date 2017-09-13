@@ -7,56 +7,57 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="578" Width="1012">
 
-    <Grid Background="#FF1C1A1A" HorizontalAlignment="Right" Width="1012" Height="578" VerticalAlignment="Bottom">
-        <Rectangle Fill="#FF423F63" HorizontalAlignment="Left" Height="272" Margin="553,122,0,0" Stroke="Black" VerticalAlignment="Top" Width="422"/>
+    <Grid Background="#FF1C1A1A" HorizontalAlignment="Left" Width="1038" Height="Auto" VerticalAlignment="Stretch" Margin="-12,0,-14,0">
+        <Rectangle Fill="#FF423F63" HorizontalAlignment="Left" Height="272" Margin="562,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="422"/>
 
-        <TextBlock HorizontalAlignment="Left" Height="56" Margin="12,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" FontSize="36" Foreground="White">
+        <TextBlock HorizontalAlignment="Left" Height="56" Margin="21,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" FontSize="36" Foreground="White">
             <Run Text="Temperature"/>
             <Run Text=":"/>
         </TextBlock>
 
-        <TextBlock HorizontalAlignment="Left" Height="55" Margin="343,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="White">
+        <TextBlock HorizontalAlignment="Left" Height="55" Margin="352,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="White">
             <Run Text="%"/>
             <Run Text="r"/>
             <Run Text="H"/>
         </TextBlock>
 
-        <TextBlock HorizontalAlignment="Left" Height="62" Margin="12,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" FontSize="36" Foreground="White" Text="Humidity: "/>
-        <TextBlock x:Name="_currentTemperature" HorizontalAlignment="Left" Height="56" Margin="244,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" FontSize="36" Foreground="#FF646EDC" Text="00.00"/>
-        <TextBlock x:Name="_currentHumidity" HorizontalAlignment="Left" Height="52" Margin="244,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" FontSize="36" Foreground="#FF5997B7" Text="00.00"/>
-        <TextBlock HorizontalAlignment="Left" Height="51" Margin="343,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" FontSize="36" Foreground="White" Text="C"/>
+        <TextBlock HorizontalAlignment="Left" Height="62" Margin="21,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" FontSize="36" Foreground="White" Text="Humidity: "/>
+        <TextBlock x:Name="_currentTemperature" HorizontalAlignment="Left" Height="56" Margin="253,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" FontSize="36" Foreground="#FF646EDC" Text="00.00"/>
+        <TextBlock x:Name="_currentHumidity" HorizontalAlignment="Left" Height="52" Margin="253,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" FontSize="36" Foreground="#FF5997B7" Text="00.00"/>
+        <TextBlock HorizontalAlignment="Left" Height="51" Margin="352,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" FontSize="36" Foreground="White" Text="C"/>
 
-        <ToggleSwitch x:Name="_coolerToggleSwitch" Header="Cooler" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top" FontSize="28" Toggled="OnCoolerSwitchToggled" Foreground="#FF8B99F3"/>
-        <ToggleSwitch x:Name="_heaterToggleSwitch" Header="Heater" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" FontSize="28" Toggled="OnHeaterSwitchToggled" Foreground="#FF8B99F3"/>
-        <ToggleSwitch x:Name="_lightToggleSwitch" Header="Light" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top" FontSize="28" Toggled="OnLightSwitchToggled" Foreground="#FF8B99F3"/>
+        <ToggleSwitch x:Name="_coolerToggleSwitch" Header="Cooler" HorizontalAlignment="Left" Margin="19,186,0,0" VerticalAlignment="Top" FontSize="28" Toggled="OnCoolerSwitchToggled" Foreground="#FF8B99F3"/>
+        <ToggleSwitch x:Name="_heaterToggleSwitch" Header="Heater" HorizontalAlignment="Left" Margin="19,258,0,0" VerticalAlignment="Top" FontSize="28" Toggled="OnHeaterSwitchToggled" Foreground="#FF8B99F3"/>
+        <ToggleSwitch x:Name="_lightToggleSwitch" Header="Light" HorizontalAlignment="Left" Margin="19,336,0,0" VerticalAlignment="Top" FontSize="28" Toggled="OnLightSwitchToggled" Foreground="#FF8B99F3"/>
 
-        <Slider x:Name="_coolerOutputSlider" HorizontalAlignment="Left" Margin="135,207,0,0" VerticalAlignment="Top" Width="221" Foreground="White" ValueChanged="OnCoolerOutputSliderValueChanged"/>
-        <Slider x:Name="_heaterOutputSlider" HorizontalAlignment="Left" Margin="135,279,0,0" VerticalAlignment="Top" Width="221" Foreground="White" ValueChanged="OnHeaterOutputSliderValueChanged"/>
-        <Slider x:Name="_lightOutputSlider" HorizontalAlignment="Left" Margin="135,357,0,0" VerticalAlignment="Top" Width="221" Foreground="White" ValueChanged="OnLightOutputSliderValueChanged"/>
+        <Slider x:Name="_coolerOutputSlider" HorizontalAlignment="Left" Margin="144,220,0,0" VerticalAlignment="Top" Width="221" Foreground="White" ValueChanged="OnCoolerOutputSliderValueChanged"/>
+        <Slider x:Name="_heaterOutputSlider" HorizontalAlignment="Left" Margin="144,292,0,0" VerticalAlignment="Top" Width="221" Foreground="White" ValueChanged="OnHeaterOutputSliderValueChanged"/>
+        <Slider x:Name="_lightOutputSlider" HorizontalAlignment="Left" Margin="144,370,0,0" VerticalAlignment="Top" Width="221" Foreground="White" ValueChanged="OnLightOutputSliderValueChanged"/>
 
-        <TextBlock HorizontalAlignment="Left" Height="60" Margin="9,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontSize="36" Foreground="#FFFFC1C1">
+        <TextBlock HorizontalAlignment="Left" Height="60" Margin="18,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontSize="36" Foreground="#FFFFC1C1">
             <Run Text="Total "/>
             <Run Text="Energe Usuage"/>
         </TextBlock>
-        <TextBlock x:Name="_totalPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="369,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontSize="32" Foreground="#FFA6C457" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
-        <TextBlock HorizontalAlignment="Left" Height="60" Margin="465,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
+        <TextBlock x:Name="_totalPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="378,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontSize="32" Foreground="#FFA6C457" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
+        <TextBlock HorizontalAlignment="Left" Height="60" Margin="474,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
 
-        <TextBlock x:Name="_coolerPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="371,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="32" Foreground="#FF646EDC" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
-        <TextBlock HorizontalAlignment="Left" Height="60" Margin="464,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
-        <TextBlock x:Name="_heaterPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="371,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="32" Foreground="#FF646EDC" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
-        <TextBlock HorizontalAlignment="Left" Height="60" Margin="464,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
-        <TextBlock x:Name="_lightPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="371,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="32" Foreground="#FF646EDC" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
-        <TextBlock HorizontalAlignment="Left" Height="60" Margin="464,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
-        <TextBlock HorizontalAlignment="Left" Height="93" Margin="541,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268" FontSize="36" Foreground="White">
+        <TextBlock x:Name="_coolerPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="380,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="32" Foreground="#FF646EDC" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
+        <TextBlock HorizontalAlignment="Left" Height="60" Margin="473,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
+        <TextBlock x:Name="_heaterPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="380,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="32" Foreground="#FF646EDC" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
+        <TextBlock HorizontalAlignment="Left" Height="60" Margin="473,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
+        <TextBlock x:Name="_lightPowerConsumption" HorizontalAlignment="Left" Height="47" Margin="380,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="32" Foreground="#FF646EDC" Text="00.00" RenderTransformOrigin="0.506,0.476"/>
+        <TextBlock HorizontalAlignment="Left" Height="60" Margin="473,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" FontSize="36" Text="W" Foreground="#FFFFC1C1"/>
+        <TextBlock HorizontalAlignment="Left" Height="93" Margin="550,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="268" FontSize="36" Foreground="White">
             <Run Text="Connection to"/>
             <LineBreak/>
             <Run Text="Azure IoT Hub"/>
         </TextBlock>
-        <Ellipse x:Name="_connectionStatusLED" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="88" Margin="820,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="88"/>
-        <CaptureElement x:Name="_captureElement" HorizontalAlignment="Left" Height="252" VerticalAlignment="Top" Width="400" Margin="565,133,0,0"/>
-        <Button x:Name="_takePhotoButton" Content="Take Photo"  HorizontalAlignment="Left" Height="61" Margin="553,406,0,0" VerticalAlignment="Top" Width="422" FontSize="28" Click="OnTakePhotoButtonClickedAsync" Foreground="#FF8B99F3"/>
-        <TextBlock HorizontalAlignment="Left" Height="62" Margin="9,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" FontSize="36" Foreground="White" Text="Forecast:"/>
-        <TextBlock x:Name="_forecast" HorizontalAlignment="Left" Height="56" Margin="244,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" FontSize="36" Foreground="#FF646EDC" Text="00.00"/>
-        <TextBlock HorizontalAlignment="Left" Height="51" Margin="343,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" FontSize="36" Foreground="White" Text="%"/>
+        <Ellipse x:Name="_connectionStatusLED" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="91" Margin="790,23,0,0" Stroke="Black" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.507,1.402"/>
+        <CaptureElement x:Name="_captureElement" HorizontalAlignment="Left" Height="252" VerticalAlignment="Top" Width="400" Margin="574,146,0,0"/>
+        <Button x:Name="_takePhotoButton" Content="Take Photo"  HorizontalAlignment="Left" Height="61" Margin="562,419,0,0" VerticalAlignment="Top" Width="422" FontSize="28" Click="OnTakePhotoButtonClickedAsync" Foreground="#FF8B99F3"/>
+        <TextBlock HorizontalAlignment="Left" Height="62" Margin="18,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" FontSize="36" Foreground="White" Text="Forecast:"/>
+        <TextBlock x:Name="_forecast" HorizontalAlignment="Left" Height="56" Margin="253,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" FontSize="36" Foreground="#FF646EDC" Text="00.00"/>
+        <TextBlock HorizontalAlignment="Left" Height="51" Margin="352,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" FontSize="36" Foreground="White" Text="%"/>
+        <Image x:Name="YodaImage" Source="Assets/yoda.png"  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="884,17,0,0" />
     </Grid>
 </Page>

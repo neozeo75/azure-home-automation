@@ -532,8 +532,8 @@
     <AppxPackagedFile Include="C:\Users\pashim\.nuget\packages\WindowsAzure.Storage\7.2.1\lib\win8\Microsoft.WindowsAzure.Storage.dll">
       <PackagePath>Microsoft.WindowsAzure.Storage.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\Assets\yoda.png">
+      <PackagePath>Assets\yoda.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -561,6 +561,9 @@
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pashim\Documents\Visual Studio 2017\Projects\AzureHomeAutomation\HomeAutomationControllerDevice\bin\ARM\Debug\HomeAutomationControllerDevice.xr.xml">
       <PackagePath>HomeAutomationControllerDevice.xr.xml</PackagePath>

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Height="578" Width="1012">
 
-    <Grid Background="#FF1C1A1A" Margin="-1,0,0,0" Height="568" VerticalAlignment="Top">
+    <Grid Background="#FF1C1A1A" HorizontalAlignment="Right" Width="1012" Height="578" VerticalAlignment="Bottom">
         <Rectangle Fill="#FF423F63" HorizontalAlignment="Left" Height="272" Margin="553,122,0,0" Stroke="Black" VerticalAlignment="Top" Width="422"/>
 
         <TextBlock HorizontalAlignment="Left" Height="56" Margin="12,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" FontSize="36" Foreground="White">

@@ -31,8 +31,8 @@ namespace HomeAutomationControllerDevice
         private readonly bool _isI2cIntialized = false;
 
         public const string DeviceId = "homehub-01";
-        public const string Longitude = "0.00034";
-        public const string Latitude = "13.22234";
+        public const string Longitude = "123.7702800";
+        public const string Latitude = "-9.5980600";
 
         public MainPage()
         {
